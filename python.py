@@ -97,7 +97,24 @@ def score_words(words):
             score += 2
         else:
             score+=1;
-    return score
-##
+    return score;
+
 # 9
+# Let's learn about list comprehensions! You are given three integers x,y  and z representing the dimensions of a cuboid along with an integer . Print a list of all possible coordinates given by (i,j,k) on a 3D grid where the sum of i+j+k
+#is not equal to n . Here,
 # #
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    L=[]
+    for i in range (x+1):
+        for j in range (y+1):
+            for k in range(z+1):
+                if i+j+k!=n:
+                    L.append([i,j,k])
+    print(L)
+        
+##10
+#Given the participants' score sheet for your University Sports Day, you are required to find the runner-up score. You are given  n scores . Store them in a list and find the score of the runner-up. #

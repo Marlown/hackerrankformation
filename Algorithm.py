@@ -129,7 +129,49 @@ def plusMinus(arr):
     print(b)
     print(c)
     pass
-##9
+##9Staircase detail
+#This is a staircase of size n=4;
+# Its base and height are both equal to n. It is drawn using # symbols and spaces. The last line is not preceded by any spaces.
+#Write aprogram that prints a staircase of size # 
+
+def staircase(n):
+    # Write your code here
+    for i in range (1,n+1):
+        for j in range(1,n-i+1):
+            print(' ',end='');
+        for j in range(1,i+1):
+            print('#', end='')
+        print("");
 
 
+  #10 Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.#     
 
+def miniMaxSum(arr):
+    # Write your code here
+    arr.sort()
+    arr1 = arr[:4]
+    arr2 = arr[1:]
+    print(sum(arr1),sum(arr2))
+
+    # 11-You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles. Count how many candles are tallest.#
+    def birthdayCakeCandles(candles):
+        # Write your code here
+        candles.sort()
+        return candles.count(max(candles))
+    
+    # Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.#
+    # 12Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock. 
+#12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.  
+def timeConversion(s):
+    # Write your code here
+    if 'AM' in s:
+        if '12:' in s:
+            return '00' + s[2:-2]
+        else:
+            return s[:-2]
+    elif 'PM' in s:
+        if '12:' in s:
+            return s[:-2]
+        else:
+            hour = str(int(s[0:2]) + 12)
+            return hour + s[2:-2]
