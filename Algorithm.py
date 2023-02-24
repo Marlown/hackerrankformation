@@ -159,8 +159,8 @@ def miniMaxSum(arr):
         candles.sort()
         return candles.count(max(candles))
     
-    # Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.#
-    # 12Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock. 
+# Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.#
+# 12Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock. 
 #12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.  
 def timeConversion(s):
     # Write your code here
@@ -175,3 +175,47 @@ def timeConversion(s):
         else:
             hour = str(int(s[0:2]) + 12)
             return hour + s[2:-2]
+
+
+
+# HackerLand University has the following grading policy:
+#Every student receives a  grade in the inclusive range from  0 to 100 .
+#Any  grades less than 40 is a failing grade.
+#Sam is a professor at the university and likes to round each student's  according to these rules:
+#If the difference between the  and the next multiple of  is less than , round  up to the next multiple of .
+#If the value of  is less than , no rounding occurs as the result will still be a failing grade.
+#Examples
+#round to 84  (85 - 84 is less than 3)
+#do not 39 round (result is less than 40)
+#do not 57round (60 - 57 is 3 or higher)#
+def gradingStudents(grades):
+    # Write your code here
+    for i in range (len(grades)):
+        a = grades[i]%5
+        b = grades[i] - a + 5
+        c = b - grades[i]
+        if c < 3 and grades[i] >= 38:
+            grades[i] = b
+    return grades 
+
+# Sam's house has an apple tree and an orange tree that yield an abundance of fruit. Using the information given below, determine the number of apples and oranges that land on Sam's house.
+#In the diagram below:#
+#he red region denotes the house, where  is the start point, and  is the endpoint. The apple tree is to the left of the house, and the orange tree is to its right.
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+    # Write your code here
+    count_Apples = 0
+    count_Oranges = 0
+    for i in apples:
+        if (i + a >= s and i + a <= t) :
+            count_Apples += 1 
+        else :
+            count_Apples += 0
+    for j in oranges:
+        if j + b >= s and j + b <= t:
+            count_Oranges += 1 
+        else:
+            count_Oranges += 0
+    return print(count_Apples, count_Oranges, sep = '\n')
+
+#
+# You are choreographing a circus show with various animals. For one act, you are given two kangaroos on a number line ready to jump in the positive direction (i.e, toward positive infinity).#
